@@ -1,0 +1,208 @@
+    1  whoami
+    2  id
+    3  ip adrr show
+    4  clear
+    5  whoami
+    6  ip link show
+    7  hostnamectl
+    8  ip -4 addr show
+    9  ping -c 4 8.8.8.8 > ping.out
+   10  cat ping.out
+   11  up
+   12  dnf update -y
+   13  dnf needs-restarting -r
+   14  history > ~/history.out
+    1  whoami
+    2  id
+    3  ip adrr show
+    4  clear
+    5  whoami
+    6  ip link show
+    7  hostnamectl
+    8  ip -4 addr show
+    9  ping -c 4 8.8.8.8 > ping.out
+   10  cat ping.out
+   11  up
+   12  dnf update -y
+   13  dnf needs-restarting -r
+   14  history > ~/history.out
+   15  exit
+   16  pwd
+   17  ls
+   18  cat history.out
+   19  cat ping.out
+   20  dnf install -y nginx libcap-ng-utils
+   21  rpm -q nginx libcap-ng-utils
+   22  dnf install -y dnf-plugins-core
+   23  dnf download --resolve --destdir=/tmp tcpdump
+   24  ls -l /tmp/*.rpm
+   25  rpm -Uvh /tmp/tcpdump-*.rpm
+   26  tcpdump --version
+   27  dnf history > dnf.out
+   28  cat dnf.out
+   29  lsblk
+   30  fdisk /dev/vdb
+   31  lsblk /dev/vdb
+   32  mkfs.ext4 -L MEPHI_WEB /dev/vdb1
+   33  blkid /dev/vdb1
+   34  mkdir -p /mephi-web
+   35  nano /etc/fstab
+   36  findmnt --verify
+   37  mount -a
+   38  df -hT /mephi-web
+   39  lsblk
+   40  findmnt /mephi-web
+   41  history >> history.out
+    1  whoami
+    2  id
+    3  ip adrr show
+    4  clear
+    5  whoami
+    6  ip link show
+    7  hostnamectl
+    8  ip -4 addr show
+    9  ping -c 4 8.8.8.8 > ping.out
+   10  cat ping.out
+   11  up
+   12  dnf update -y
+   13  dnf needs-restarting -r
+   14  history > ~/history.out
+   15  exit
+   16  pwd
+   17  ls
+   18  cat history.out
+   19  cat ping.out
+   20  dnf install -y nginx libcap-ng-utils
+   21  rpm -q nginx libcap-ng-utils
+   22  dnf install -y dnf-plugins-core
+   23  dnf download --resolve --destdir=/tmp tcpdump
+   24  ls -l /tmp/*.rpm
+   25  rpm -Uvh /tmp/tcpdump-*.rpm
+   26  tcpdump --version
+   27  dnf history > dnf.out
+   28  cat dnf.out
+   29  lsblk
+   30  fdisk /dev/vdb
+   31  lsblk /dev/vdb
+   32  mkfs.ext4 -L MEPHI_WEB /dev/vdb1
+   33  blkid /dev/vdb1
+   34  mkdir -p /mephi-web
+   35  nano /etc/fstab
+   36  findmnt --verify
+   37  mount -a
+   38  df -hT /mephi-web
+   39  lsblk
+   40  findmnt /mephi-web
+   41  history >> history.out
+   42  cat history.out
+   43  systemctl enable --now nginx
+   44  systemctl start nginx
+   45  systemctl status nginx
+   46  journalctl -u nginx -b > journalctl.out
+   47  cat journalctl.out 
+   48  rpm -q acl sudo
+   49  groupadd -g 4444 curators 
+   50  useradd -m curator1
+   51  useradd -m curator2
+   52  usermod -aG curators curator1
+   53  usermod -aG curators curator2
+   54  useradd -u 5501 -m user1
+   55  useradd -u 5502 -m user2
+   56  useradd -u 5503 -m user3
+   57  passwd user1
+   58  passwd user2
+   59  passwd user3
+   60  passwd curator1
+   61  passwd curator2
+   62  passwd user1
+   63  passwd user2
+   64  passwd user3
+   65  passwd curator1
+   66  passwd curator2
+   67  groupadd developers
+   68  usermod -aG evelopers user1
+   69  usermod -aG developers user1
+   70  usermod -aG developers user2
+   71  usermod -aG developers user3
+   72  id user1
+   73  id user2
+   74  id user3
+   75  id curator1
+   76  id curator2
+   77  mkdir -p /data/mephi-2026
+   78  chown root:developers /data/mephi-2026
+   79  chmod 2770 /data/mephi-2026
+   80  setfacl -m g:curators:r-x /data/mephi-2026
+   81  etfacl -d -m u::rwx,g::rwx,g:curators:r-x:,o::--- /data/mephi-2026
+   82  setfacl -d -m u::rwx,g::rwx,g:curators:r-x:,o::--- /data/mephi-2026
+   83  setfacl -d -m u::7,g::7,g:curators:5:,o::0 /data/mephi-2026
+   84  setfacl -d -m u::rwx,g::rwx,g:curators:r-x:,o::--- /data/mephi-2026
+   85  setfacl -d -m u::7 /data/mephi-2026
+   86  setfacl -d -m g::7 /data/mephi-2026
+   87  setfacl -d -m g:curators:5 /data/mephi-2026
+   88  setfacl-d -m o::0 /data/mephi-2026
+   89  setfacl -d -m o::0 /data/mephi-2026
+   90  getfacl /data/mephi-2026
+   91  ls -l usr/sbin/tcpdump
+   92  pwd
+   93  ls
+   94  which tcpdump
+   95  type -a tcpdump
+   96  ls -l ~/usr/sbin/tcpdump
+   97  ls -l /usr/sbin/tcpdump
+   98  getcap /usr/sbin/tcpdump
+   99  setcap cap_net_raw+ep /usr/sbin/tcpdump
+  100  getcap /usr/sbin/tcpdump
+  101  getcap /usr/sbin/tcpdump > getcap.out
+  102  ping 8.8.8.8 > dev/null &
+  103  sudo -u user1 tcpdump -c 3-i any 
+  104  kill %1
+  105  ping 8.8.8.8 > /dev/null &
+  106  sudo -u user1 tcpdump -c 3 -i any 
+  107  kill %1
+  108  sestatus
+  109  getenforce
+  110  ls -Zd /mephi-web
+  111   semanage
+  112  dnf install -y policycoreutils-python-utils
+  113  semanage
+  114  semanage fcontext -l | head -3
+  115  semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  116  restorecon -Rv /mephi-web
+  117  ls -Zd /mephi-web
+  118  getenforce
+  119  getenforce > getenforce.out
+  120  stat /data/mephi-2026 > stat.out
+  121  stat /mephi-web >> stat.out 
+  122  usermod -s /sbin/nologin curator1
+  123  usermod -s /sbin/nologin curator2
+  124  grep curator /etc/passwd
+  125  for u in user1 user2 user3 curator1 curator2; do chage -m 90 $u; done
+  126  nano /etc/login.defs
+  127  chage -l user1
+  128  nano /etc/login.defs
+  129  chage -l user1
+  130  for u in user1 user2 user3 curator1 curator2; do chage -M 90 $u; done
+  131  for u in user1 user2 user3 curator1 curator2; do chage -m 0 $u; done
+  132  chage -l user1
+  133  chage -l curator1
+  134  nano /etc/security/pwquality.conf
+  135  echo 'shor1%' | pwscore
+  136  grep curator /etc/passwd
+  137  echo "Hello from student: M265888" > /mephi-web/index.html
+  138  restorecon -RV /mephi-web
+  139  ls -Z /mephi-web/
+  140  restorecon -Rv /mephi-web
+  141  ls -Z /mephi-web/
+  142  grep -rn '/usr/share/nginx/html' /etc/nginx/
+  143  sed -i 's#/usr/share/nginx/html#/mephi-web#g' /etc/nginx/nginx.conf
+  144  grep -n 'root' etc/nginx/nginx.conf
+  145  grep -n 'root' /etc/nginx/nginx.conf
+  146  nginx -t
+  147  systemctl restart nginx
+  148  firewall-cmd --state
+  149  curl http://ocalhost/
+  150  curl http://localhost/
+  151  curl http://localhost/ > curl.out
+  152  cat curl.out
+  153  history >> history.out
